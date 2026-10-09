@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South Sigma | Management consulting, valuation and transactions</title>
+<meta name="description" content="Dubai consultancy for management consulting, valuation and transaction advisory, and market entry into the Gulf by partnership, acquisition or own presence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: a set report. Narrow margin column names each section, content runs left-aligned beside it; the practice selector is the one loud element. */
+:root{
+  --ground:#E8EAEB; --sheet:#F6F7F7; --ink:#1D2428; --muted:#566068; --rule:#C3C9CD;
+  --accent:#FA2601; --accent-text:#B51B00;
+  --deep:#20303A; --on-deep:#EEF0F1; --on-deep-muted:#B4BFC6; --deep-rule:#3B4C57;
+  --display:"Alexandria","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --text:"Source Serif 4","Iowan Old Style",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#1B2227; --sheet:#232B31; --ink:#E9ECED; --muted:#A5AFB5; --rule:#3A454D;
+  --accent:#FF4A26; --accent-text:#FF7A5C;
+  --deep:#12181C; --on-deep:#EEF0F1; --on-deep-muted:#A5AFB5; --deep-rule:#2E3940; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#1B2227; --sheet:#232B31; --ink:#E9ECED; --muted:#A5AFB5; --rule:#3A454D;
+  --accent:#FF4A26; --accent-text:#FF7A5C;
+  --deep:#12181C; --on-deep:#EEF0F1; --on-deep-muted:#A5AFB5; --deep-rule:#2E3940; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--ground);color:var(--ink);font-family:var(--text);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:16px;z-index:20;background:var(--sheet);padding:8px 12px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--deep);color:var(--on-deep);border-bottom:1px solid var(--deep-rule)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
+.brand{display:flex;align-items:center;flex:none;min-height:44px;line-height:0}
+.brand img{height:28px;width:auto}
+.nav{display:flex;gap:22px;margin-left:auto;font-family:var(--display);font-size:.875rem;font-weight:400}
+.nav a{text-decoration:none;padding-block:8px;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--accent)}
+.btn{display:inline-block;font-family:var(--display);font-weight:400;font-size:.9375rem;text-decoration:none;padding:12px 20px;border:1px solid var(--ink);background:var(--ink);color:var(--sheet);cursor:pointer;line-height:1.2}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.quiet{background:transparent;color:var(--ink)}
+.btn.quiet:hover{background:var(--ink);color:var(--sheet)}
+.top .btn{padding:10px 16px;font-size:.875rem;flex:none;min-height:44px;display:inline-flex;align-items:center;background:var(--on-deep);border-color:var(--on-deep);color:var(--deep)}
+.top .btn:hover{background:transparent;color:var(--on-deep)}
+.top .short{display:none}
+@media (max-width:560px){.top .long{display:none}.top .short{display:inline}}
+.menu{display:none;margin-left:auto;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-family:var(--display);font-size:.875rem;padding:10px 6px;min-height:44px;min-width:44px;display:flex;align-items:center}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:100%;background:var(--sheet);color:var(--ink);border:1px solid var(--rule);padding:8px 20px;display:grid;min-width:220px;font-family:var(--display);font-size:.9375rem}
+.menu nav a{text-decoration:none;padding-block:11px;border-bottom:1px solid var(--rule)}
+.menu nav a:last-child{border-bottom:0}
+.nav a{white-space:nowrap}
+@media (max-width:1240px){.nav{display:none}.menu{display:block}}
+@media (max-width:420px){.brand img{height:21px}.top .wrap{gap:8px}.top .btn{padding:9px 11px;font-size:.8125rem}}
+
+/* hero */
+.hero{padding-block:clamp(48px,7vw,96px) clamp(40px,5vw,64px)}
+.hero h1{font-family:var(--display);font-weight:200;font-size:clamp(2rem,4.6vw,3.75rem);line-height:1.08;letter-spacing:-.025em;max-width:21ch;text-wrap:balance}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:28px 56px;align-items:end}
+@media (max-width:980px){.hero .wrap{grid-template-columns:1fr}}
+.hero .lede{max-width:56ch;font-size:1.125rem;color:var(--muted)}
+.hero .acts{margin-top:24px;display:flex;flex-direction:column;align-items:stretch;gap:12px;max-width:280px;text-align:center}
+
+/* route selector */
+.routes{background:var(--sheet);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.routes .wrap{padding-block:clamp(32px,5vw,56px) clamp(40px,6vw,72px)}
+.routes h2{font-family:var(--display);font-weight:400;font-size:1rem;color:var(--muted)}
+.tabs{margin-top:20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 6px}
+.tab{appearance:none;background:none;border:0;border-bottom:4px solid var(--rule);color:var(--muted);cursor:pointer;text-align:left;padding:14px 12px 18px 12px;display:grid;gap:14px;font-family:var(--display);font-weight:300;font-size:clamp(.875rem,1.9vw,1.5rem);line-height:1.2;letter-spacing:-.01em;min-width:0;align-content:start}
+.tab svg{width:clamp(34px,5vw,52px);height:auto;stroke:currentColor;fill:none;stroke-width:1.4}
+.tab:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tab[aria-selected="true"] svg{stroke:var(--accent)}
+.panel{padding-top:clamp(28px,4vw,44px)}
+.panel .def{font-family:var(--display);font-weight:300;font-size:clamp(1.25rem,2.4vw,1.75rem);line-height:1.3;max-width:34ch;text-wrap:balance}
+.panel .cols{margin-top:32px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 56px}
+.panel h3{font-family:var(--display);font-weight:500;font-size:.9375rem;margin-bottom:12px}
+.panel li{padding-block:10px;border-top:1px solid var(--rule);max-width:62ch}
+.panel .risk{margin-top:28px;padding-left:16px;border-left:4px double var(--accent);max-width:52ch}
+.panel .risk h3{margin-bottom:4px}
+.panel .solo p{max-width:62ch}
+.panel .solo .btn{margin-top:24px}
+.panel .valnote{}
+@media (max-width:760px){.panel .cols{grid-template-columns:1fr}.tab{padding-inline:6px}}
+@media (max-width:620px){.tabs{grid-template-columns:1fr 1fr;gap:0 8px}.tab{font-size:1.0625rem;grid-template-columns:auto 1fr;align-items:center;gap:10px;padding:12px 6px}.tab svg{width:30px}}
+@media (prefers-reduced-motion:no-preference){.panel:not([hidden]){animation:in .28s ease-out}@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
+
+/* section frame */
+.band{padding-block:clamp(56px,8vw,104px)}
+.band + .band{border-top:1px solid var(--rule)}
+.sec{display:grid;grid-template-columns:190px minmax(0,1fr);gap:28px 56px}
+.sec > h2{font-family:var(--display);font-weight:500;font-size:1rem;line-height:1.35;padding-top:.35em}
+.sec > h2::before{content:"";display:block;width:28px;height:2px;margin-bottom:14px;background:var(--accent)}
+.sec > div{min-width:0}
+.lead{font-family:var(--display);font-weight:300;font-size:clamp(1.375rem,2.8vw,2.125rem);line-height:1.25;letter-spacing:-.012em;max-width:26ch;text-wrap:balance}
+.lead + *{margin-top:clamp(28px,4vw,44px)}
+@media (max-width:860px){.sec{grid-template-columns:1fr}.sec > h2{padding-top:0;font-size:1.25rem}}
+
+/* who */
+.who{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 56px}
+.who h3{font-family:var(--display);font-weight:400;font-size:1.1875rem;line-height:1.3;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.note{font-family:var(--display);font-size:.8125rem;color:var(--muted);margin-top:18px;max-width:70ch}
+.who li{font-style:italic;padding-block:14px;border-bottom:1px solid var(--rule);max-width:56ch}
+@media (max-width:700px){.who{grid-template-columns:1fr}}
+
+/* services */
+.svc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:14px 48px;padding-block:28px;border-top:1px solid var(--ink)}
+.svc h3{font-family:var(--display);font-weight:400;font-size:1.3125rem;line-height:1.25;letter-spacing:-.005em}
+.svc p{margin-top:10px;color:var(--muted);max-width:44ch}
+.svc ul{columns:2;column-gap:36px}
+.svc li{break-inside:avoid;padding:7px 0 7px 16px;position:relative;font-size:1rem;line-height:1.45}
+.svc li::before{content:"";position:absolute;left:0;top:.95em;width:8px;height:2px;background:var(--accent)}
+@media (max-width:860px){.svc{grid-template-columns:1fr}}
+@media (max-width:560px){.svc ul{columns:1}}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px}
+.sectors div{padding-block:18px 22px;border-top:1px solid var(--rule)}
+.sectors dt{font-family:var(--display);font-weight:500;font-size:1rem}
+.sectors dd{margin-top:6px;color:var(--muted);font-size:1rem;line-height:1.5}
+@media (max-width:900px){.sectors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.sectors{grid-template-columns:1fr}}
+
+/* engagement: dark band, true sequence so numbered */
+.deep{background:var(--deep);color:var(--on-deep);border-top:0}
+.deep + .band{border-top:0}
+.deep .lead{color:var(--on-deep)}
+.steps{counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px 24px;padding-block:22px;border-top:1px solid var(--deep-rule)}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:300;font-size:2.75rem;line-height:1;color:var(--accent)}
+.steps h3{font-family:var(--display);font-weight:400;font-size:1.1875rem}
+.steps p{margin-top:6px;color:var(--on-deep-muted);max-width:62ch}
+@media (max-width:480px){.steps li{grid-template-columns:44px minmax(0,1fr);gap:8px 12px}.steps li::before{font-size:2rem}}
+
+/* principles */
+.principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 56px}
+.principles h3{font-family:var(--display);font-weight:400;font-size:1.1875rem;margin-bottom:8px}
+.principles p{color:var(--muted);max-width:48ch}
+@media (max-width:700px){.principles{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px 56px;align-items:start}
+.about .prose p{max-width:62ch}
+.about .prose p + p{margin-top:1em}
+.facts{border-top:1px solid var(--ink)}
+.facts div{padding-block:14px;border-bottom:1px solid var(--rule)}
+.facts dt{font-family:var(--display);font-size:.8125rem;color:var(--muted)}
+.facts dd{margin-top:2px}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 56px;align-items:start}
+.contact .intro p{max-width:46ch}
+@media (min-width:861px){.contact .intro{position:sticky;top:100px}}
+.mail{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.mail span{font-family:var(--display);font-weight:300;font-size:clamp(1.125rem,2.2vw,1.5rem);user-select:all;overflow-wrap:anywhere}
+.tell{margin-top:28px}
+.tell h3,.form h3{font-family:var(--display);font-weight:500;font-size:.9375rem;margin-bottom:8px}
+.tell li{padding-block:9px;border-top:1px solid var(--rule);max-width:50ch}
+.form{background:var(--sheet);border:1px solid var(--rule);padding:clamp(20px,3vw,32px);display:grid;gap:16px}
+.form p.hint{color:var(--muted);font-size:.9375rem}
+.field{display:grid;gap:6px}
+.field label{font-family:var(--display);font-size:.8125rem;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--ground);border:1px solid var(--muted);padding:10px 12px;width:100%;border-radius:0}
+.field textarea{min-height:76px;resize:vertical}
+.out{font-family:var(--text);font-size:.9375rem;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;border:1px dashed var(--muted);padding:14px;min-height:120px;margin:0}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.status{font-family:var(--display);font-size:.875rem;color:var(--accent-text)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--deep);padding-block:44px 40px;font-size:.9375rem;color:var(--on-deep-muted)}
+footer .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px 56px}
+footer img{height:24px;width:auto}
+footer address{font-style:normal;margin-top:16px;line-height:1.5}
+footer .legal p{max-width:60ch}
+footer .legal p + p{margin-top:12px}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* v2: practices */
+.panel .more{margin-top:22px}
+.practice{padding-block:30px 34px;border-top:1px solid var(--ink)}
+.phead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:8px 48px;align-items:baseline}
+.phead h3{font-family:var(--display);font-weight:300;font-size:clamp(1.5rem,2.6vw,1.9375rem);letter-spacing:-.012em;line-height:1.2}
+.phead p{color:var(--muted);max-width:52ch}
+.groups{margin-top:26px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px}
+.groups h4,.routes3 h4{font-family:var(--display);font-weight:500;font-size:.9375rem;margin:0 0 6px}
+.groups li,.routes3 li{padding:8px 0;border-top:1px solid var(--rule);font-size:1rem;line-height:1.45}
+@media (max-width:860px){.phead{grid-template-columns:1fr}.groups{gap:24px}}
+@media (max-width:640px){.groups{grid-template-columns:1fr}}
+.routes3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 40px}
+.routes3 article{border-top:1px solid var(--ink);padding-top:20px}
+.rhead{display:flex;align-items:center;gap:14px}
+.rhead svg{width:44px;height:auto;stroke:var(--accent);fill:none;stroke-width:1.4;flex:none}
+.rhead h3{font-family:var(--display);font-weight:300;font-size:1.625rem;letter-spacing:-.01em}
+.rdef{margin-top:12px}
+.routes3 h4{margin-top:22px}
+@media (max-width:900px){.routes3{grid-template-columns:1fr}}
+@media (min-width:901px){.routes3{row-gap:0}.routes3 article{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:0}.who.three h3{min-height:calc(2.6em + 15px);display:flex;align-items:flex-end}}
+.assess{margin-top:40px;padding-left:18px;border-left:4px double var(--accent);max-width:70ch}
+.assess h3{font-family:var(--display);font-weight:500;font-size:1rem;margin-bottom:6px}
+.who.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 40px}
+@media (max-width:900px){.who.three{grid-template-columns:1fr}.who li{max-width:none}}
+.deep .principles p{color:var(--on-deep-muted)}
+.groups.one{display:block}
+.groups.one ul{columns:3;column-gap:40px}
+.groups.one li{break-inside:avoid}
+@media (max-width:860px){.groups.one ul{columns:2}}
+@media (max-width:560px){.groups.one ul{columns:1}}
+.xintro{max-width:62ch}
+.exits{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 56px}
+.exits > div{border-top:1px solid var(--ink);padding-top:18px}
+.exits h3{font-family:var(--display);font-weight:300;font-size:1.625rem;letter-spacing:-.01em;margin-bottom:10px}
+.exits p{max-width:50ch}
+.xdo{margin-top:40px}
+.xdo h3{font-family:var(--display);font-weight:500;font-size:.9375rem;margin-bottom:10px}
+.xdo li{padding-block:10px;border-top:1px solid var(--rule);max-width:72ch}
+@media (max-width:700px){.exits{grid-template-columns:1fr}}
+.li-icon{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin-left:-8px;color:inherit}
+.li-icon:hover{color:var(--accent)}
+footer .li-icon{color:var(--on-deep)}
+footer .li-icon:hover{color:var(--accent)}
+footer .fp{margin-top:8px}
+.mail.tel{margin-top:12px}
+.contact .li{margin-top:20px}
+.mail .status{font-size:.875rem;font-weight:400;flex-basis:100%}
+.pdlg{width:min(780px,calc(100% - 32px));max-height:min(86vh,920px);padding:0;border:1px solid var(--rule);background:var(--sheet);color:var(--ink)}
+.pdlg::backdrop{background:rgba(18,24,28,.62)}
+.phd{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(18px,4vw,32px);background:var(--sheet);border-bottom:1px solid var(--rule)}
+.phd h2{font-family:var(--display);font-weight:400;font-size:1.25rem}
+.phd .btn{padding:9px 16px;min-height:44px}
+.pdlg .policy{padding:28px clamp(18px,4vw,32px) 36px}
+.pdlg .lead{font-size:clamp(1.25rem,2.4vw,1.625rem)}
+.linkbtn{appearance:none;background:none;border:0;padding:6px 0;font:inherit;color:var(--on-deep);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.policy .pbody{max-width:68ch;font-size:1rem}
+.policy h3{font-family:var(--display);font-weight:500;font-size:1rem;margin:28px 0 6px}
+.policy .pbody p{color:var(--muted)}
+footer a{color:var(--on-deep);text-underline-offset:3px}
+.gd{color:var(--muted);font-size:.9375rem;line-height:1.45;margin-bottom:12px;min-height:2.9em}
+@media (max-width:640px){.gd{min-height:0}}
+.field select{min-height:44px}
+footer .fp{margin-top:16px;max-width:36ch}
+@media (max-width:620px){.tab{min-height:89px}}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top-of-page" aria-label="South Sigma, home"><img src="data:image/png;base64,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" alt="South Sigma" width="836" height="88"></a>
+    <nav class="nav" aria-label="Main"><a href="#services">Services</a><a href="#exits">Exits</a><a href="#market-entry">Market entry</a><a href="#clients">Who we work with</a><a href="#sectors">Sectors</a><a href="#principles">Principles</a><a href="#about">About</a></nav>
+    <details class="menu"><summary>Menu</summary><nav aria-label="Main, compact"><a href="#services">Services</a><a href="#exits">Exits</a><a href="#market-entry">Market entry</a><a href="#clients">Who we work with</a><a href="#sectors">Sectors</a><a href="#principles">Principles</a><a href="#about">About</a></nav></details>
+    <a class="btn" href="#contact"><span class="long">Start a conversation</span><span class="short">Contact</span></a>
+  </div>
+</header>
+
+<main id="main">
+<div id="top-of-page"></div>
+<section class="hero">
+  <div class="wrap">
+    <h1>Management consulting, valuation advisory and transaction advisory.</h1>
+    <div class="side">
+    <p class="lede">South Sigma is a Dubai management consultancy for businesses that want to grow. We advise owners, management teams and investors, and help international companies enter the Gulf and wider Middle East through partnerships and acquisitions.</p>
+    <div class="acts">
+      <a class="btn" href="#contact">Start a conversation</a>
+      <a class="btn quiet" href="#practices">See the four practices</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="routes" id="practices" aria-labelledby="practices-h">
+  <div class="wrap">
+    <h2 id="practices-h">Four practices. Choose one to see when to call us and what we do.</h2>
+    <div class="tabs" role="tablist" aria-labelledby="practices-h">
+      <button class="tab" role="tab" id="t-mc" aria-controls="p-mc" aria-selected="true"><svg viewBox="0 0 52 36" aria-hidden="true"><circle cx="26" cy="8" r="5"/><circle cx="10" cy="28" r="5"/><circle cx="42" cy="28" r="5"/><path d="M26 13v6M10 23v-4h32v4"/></svg><span>Management consulting</span></button>
+      <button class="tab" role="tab" id="t-val" aria-controls="p-val" aria-selected="false" tabindex="-1"><svg viewBox="0 0 52 36" aria-hidden="true"><circle cx="26" cy="18" r="13"/><path d="M4 18h44M14 15v6M26 13v10M38 15v6"/></svg><span>Valuation advisory</span></button>
+      <button class="tab" role="tab" id="t-tx" aria-controls="p-tx" aria-selected="false" tabindex="-1"><svg viewBox="0 0 52 36" aria-hidden="true"><circle cx="11" cy="18" r="9"/><circle cx="41" cy="18" r="9"/><path d="M22 15h8M30 15l-3-3M30 21h-8M22 21l3 3"/></svg><span>Transaction advisory</span></button>
+      <button class="tab" role="tab" id="t-me" aria-controls="p-me" aria-selected="false" tabindex="-1"><svg viewBox="0 0 52 36" aria-hidden="true"><circle cx="34" cy="18" r="14" stroke-dasharray="3 4"/><circle cx="34" cy="18" r="5"/><path d="M2 18h20M22 18l-5-4M22 18l-5 4"/></svg><span>Market entry and partnerships</span></button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-mc" aria-labelledby="t-mc" tabindex="0">
+      <p class="def">We help owners and management teams plan, forecast and control the company&#x27;s finances, and test new projects before money is committed.</p>
+      <div class="cols">
+        <div>
+          <h3>When to call us</h3>
+          <ul>
+            <li>You are planning a new project or line of business and need a feasibility study before money is committed.</li>
+            <li>Your cash position is hard to predict and you need a forecast you can rely on.</li>
+            <li>Budgets and management reports arrive late or do not tell you what you need to know.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Typical work</h3>
+          <ul>
+            <li>Financial strategy</li>
+            <li>Feasibility studies</li>
+            <li>Cash flow forecasting models</li>
+            <li>Budgeting and management reporting</li>
+            <li>Cost review</li>
+          </ul>
+          <a class="btn quiet more" href="#svc-mc">See all management consulting services</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-val" aria-labelledby="t-val" tabindex="0">
+      <p class="def">We value businesses, shareholdings and assets, and set out the method and assumptions so that the figure can be tested.</p>
+      <div class="cols">
+        <div>
+          <h3>When to call us</h3>
+          <ul>
+            <li>You are buying, selling or bringing in an investor and need a value you can support in negotiation.</li>
+            <li>Your auditors need a purchase price allocation, an impairment test or a valuation of share-based payments.</li>
+            <li>Shareholders or the parties to a dispute need an independent valuation.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Typical work</h3>
+          <ul>
+            <li>Business and equity valuation</li>
+            <li>Pre-revenue and early-stage company valuation</li>
+            <li>Purchase price allocation</li>
+            <li>Impairment testing</li>
+            <li>Valuation for litigation and shareholder disputes</li>
+          </ul>
+          <a class="btn quiet more" href="#svc-val">See all valuation advisory services</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-tx" aria-labelledby="t-tx" tabindex="0">
+      <p class="def">We advise owners who want to sell, buyers who want to acquire and companies raising capital, from the first decision on strategy through to completion.</p>
+      <div class="cols">
+        <div>
+          <h3>When to call us</h3>
+          <ul>
+            <li>You want to exit your business, in full or by selling your stake, and need the right acquirer.</li>
+            <li>You want to acquire a business and need help finding, assessing and pricing it.</li>
+            <li>You need to bring in an investor, raise or restructure debt, or fund a project.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Typical work</h3>
+          <ul>
+            <li>Exit advisory and acquirer search</li>
+            <li>Transaction strategy and structuring</li>
+            <li>Due diligence</li>
+            <li>Investor search</li>
+            <li>Project finance and debt restructuring</li>
+          </ul>
+          <a class="btn quiet more" href="#svc-tx">See all transaction advisory services</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-me" aria-labelledby="t-me" tabindex="0">
+      <p class="def">We help international companies enter the Gulf and wider Middle East through a strategic partnership, the acquisition of a local business or their own presence.</p>
+      <div class="cols">
+        <div>
+          <h3>When to call us</h3>
+          <ul>
+            <li>Your board wants to enter the region and needs to choose a country and a route.</li>
+            <li>A local group has proposed a joint venture or a distribution agreement and you need an independent view.</li>
+            <li>You want to buy a local business to gain customers, staff and an established operation from the first day.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Typical work</h3>
+          <ul>
+            <li>Market-entry options assessment</li>
+            <li>Partner search and screening</li>
+            <li>Joint venture business plan and commercial terms</li>
+            <li>Target search for a market-entry acquisition</li>
+            <li>Launch plan for your own presence</li>
+          </ul>
+          <a class="btn quiet more" href="#market-entry">See the three routes into the region</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap sec">
+    <h2>Services in detail</h2>
+    <div>
+      <p class="lead">Three core practices and everything each one covers.</p>
+      <div>
+        <article class="practice" id="svc-mc">
+          <div class="phead"><h3>Management consulting</h3><p>For owners and management teams who want a firmer grip on the company&#x27;s finances before the next decision.</p></div>
+          <div class="groups one">
+            <ul>
+              <li>Financial strategy</li>
+              <li>Feasibility studies</li>
+              <li>Cash flow forecasting models</li>
+              <li>Budgeting and management reporting</li>
+              <li>Cost review</li>
+            </ul>
+          </div>
+        </article>
+        <article class="practice" id="svc-val">
+          <div class="phead"><h3>Valuation advisory</h3><p>For boards, shareholders, finance teams and investors who need a value with the method and assumptions set out.</p></div>
+          <div class="groups">
+            <div><h4>For transactions</h4><p class="gd">Values to support a price, an investment decision or a board approval.</p><ul>
+              <li>Business and equity valuation</li>
+              <li>Debt and equity investment appraisal</li>
+              <li>Fairness and solvency analysis</li>
+              <li>Purchase price allocation</li>
+            </ul></div>
+            <div><h4>For financial reporting</h4><p class="gd">Valuations your finance team and auditors need for the accounts.</p><ul>
+              <li>Pre-revenue and early-stage company valuation</li>
+              <li>Share-based payment valuation</li>
+              <li>Impairment testing</li>
+            </ul></div>
+            <div><h4>For portfolios and disputes</h4><p class="gd">Values for groups of holdings, complex instruments and contested matters.</p><ul>
+              <li>Business portfolio valuation</li>
+              <li>Complex financial instrument valuation</li>
+              <li>Valuation for litigation and shareholder disputes</li>
+            </ul></div>
+          </div>
+        </article>
+        <article class="practice" id="svc-tx">
+          <div class="phead"><h3>Transaction advisory</h3><p>For owners planning an exit, buyers, and companies raising capital or debt.</p></div>
+          <div class="groups">
+            <div><h4>Exits and stake sales</h4><p class="gd">For owners and partners who want to sell all or part of the business.</p><ul>
+              <li>Exit strategy and sale readiness</li>
+              <li>Valuation and price expectations</li>
+              <li>Acquirer search and screening</li>
+              <li>Sale of the whole business</li>
+              <li>Sale of a partner&#x27;s or shareholder&#x27;s stake</li>
+              <li>Negotiation support to completion</li>
+            </ul></div>
+            <div><h4>Acquisitions</h4><p class="gd">From the decision to buy through to completion and integration.</p><ul>
+              <li>Transaction strategy and structuring</li>
+              <li>Target search</li>
+              <li>Due diligence</li>
+              <li>Valuation and pricing</li>
+              <li>Transaction documents, prepared with your lawyers</li>
+              <li>Integration planning</li>
+            </ul></div>
+            <div><h4>Capital, debt and deal support</h4><p class="gd">Finding investors and lenders, and the numbers behind the case.</p><ul>
+              <li>Investor search</li>
+              <li>Investor materials</li>
+              <li>Project finance</li>
+              <li>Working capital facilities</li>
+              <li>Debt restructuring</li>
+              <li>Financial modelling</li>
+              <li>Business plan and forecast review</li>
+            </ul></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="exits">
+  <div class="wrap sec">
+    <h2>Exits and stake sales</h2>
+    <div>
+      <p class="lead">For owners who want to sell, in full or in part.</p>
+      <p class="xintro">Selling a business you have built is a decision most owners make once. We advise owners and shareholders through the whole process, and we identify, screen and introduce acquirers who fit the business, its people and the terms you want.</p>
+      <div class="exits">
+        <div>
+          <h3>Full exit</h3>
+          <p>All shareholders sell and ownership passes to the acquirer. This suits owners who are retiring, who have no successor in the business, or who want to realise the value they have built.</p>
+        </div>
+        <div>
+          <h3>Partial exit</h3>
+          <p>One or more partners sell their stake while the others stay. The buyer may be a remaining partner, a new investor or a strategic acquirer. This suits partners whose plans have diverged, and businesses that want a new shareholder alongside the founders.</p>
+        </div>
+      </div>
+      <div class="xdo">
+        <h3>What South Sigma does</h3>
+        <ul>
+          <li>Establishes what each owner wants from the sale: price, timing, any continuing role, and the future of the staff and the name.</li>
+          <li>Prepares the business for sale: the financial record, a valuation, and a clear account of what an acquirer is buying.</li>
+          <li>Identifies and screens acquirers, including strategic buyers, financial investors and, for a stake sale, the remaining partners.</li>
+          <li>Approaches the shortlisted acquirers in confidence and manages the exchange of information.</li>
+          <li>Compares offers on price, terms and certainty, and supports the negotiation through to completion alongside your lawyers.</li>
+          <li>For a partial exit, helps the partners agree the basis of valuation and the terms between those leaving and those staying.</li>
+        </ul>
+        <p class="note">We run the process in confidence. The business is not named to any acquirer until you have approved the approach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="market-entry">
+  <div class="wrap sec">
+    <h2>Market entry and partnerships</h2>
+    <div>
+      <p class="lead">Three routes into the Gulf and wider Middle East.</p>
+      <div class="routes3">
+        <article>
+          <div class="rhead"><svg viewBox="0 0 52 36" aria-hidden="true"><circle cx="19" cy="18" r="13"/><circle cx="33" cy="18" r="13"/></svg><h3>Partner</h3></div>
+          <p class="rdef">You enter through a strategic partnership with a local business, such as a distributor, an agent, a licensee or a joint venture partner.</p>
+          <h4>When it fits</h4>
+          <ul>
+            <li>You want to test demand before committing significant capital.</li>
+            <li>A local business already has the customers, channels or operating capability you need.</li>
+            <li>You can accept shared control in return for a faster start.</li>
+          </ul>
+          <h4>What South Sigma does</h4>
+          <ul>
+            <li>Sets the partner criteria with you, builds a longlist and screens it down to a shortlist.</li>
+            <li>Checks each shortlisted partner in person: ownership, reputation and capacity to perform.</li>
+            <li>Prepares the commercial terms: territory, exclusivity, targets, governance and exit.</li>
+            <li>Writes the joint venture business plan and the first-year operating plan.</li>
+          </ul>
+        </article>
+        <article>
+          <div class="rhead"><svg viewBox="0 0 52 36" aria-hidden="true"><circle cx="24" cy="18" r="16"/><circle cx="30" cy="18" r="7"/></svg><h3>Acquire</h3></div>
+          <p class="rdef">You enter by buying all or part of a local business that is already trading.</p>
+          <h4>When it fits</h4>
+          <ul>
+            <li>You need customers, staff, premises and an established operation from the first day.</li>
+            <li>Speed matters more to you than building in your own way.</li>
+            <li>You have the capital and management capacity to integrate a business in a new market.</li>
+          </ul>
+          <h4>What South Sigma does</h4>
+          <ul>
+            <li>Defines the acquisition criteria, builds a target longlist and screens it.</li>
+            <li>Carries out due diligence on the market position, customers, contracts and financial record.</li>
+            <li>Values the business and models the price range.</li>
+            <li>Writes the integration plan for the first 100 days.</li>
+          </ul>
+        </article>
+        <article>
+          <div class="rhead"><svg viewBox="0 0 52 36" aria-hidden="true"><circle cx="24" cy="18" r="16" stroke-dasharray="3 4"/><circle cx="24" cy="18" r="6"/></svg><h3>Build</h3></div>
+          <p class="rdef">You set up your own presence, with your own entity, people and premises.</p>
+          <h4>When it fits</h4>
+          <ul>
+            <li>You want full control of the brand, the pricing and the customer relationship.</li>
+            <li>No suitable partner or target exists, or the ones that do would cost too much.</li>
+            <li>You can fund the period before the new operation covers its own costs.</li>
+          </ul>
+          <h4>What South Sigma does</h4>
+          <ul>
+            <li>Produces a feasibility study covering demand, competitors, pricing, costs and investment.</li>
+            <li>Compares locations and set-up structures on commercial grounds.</li>
+            <li>Builds the financial model: set-up cost, running cost, break-even and cash requirement.</li>
+            <li>Writes the launch plan: organisation, hiring sequence, suppliers, premises and timetable.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="assess">
+        <h3>If you have not chosen a route</h3>
+        <p>A market-entry options assessment compares Partner, Acquire and Build for your business in the markets you are considering. It sets out the cost, time, control and risk of each route, tests them against your objectives, and ends with one recommendation and the reasons for it. If the evidence shows that none of the routes makes commercial sense yet, the assessment says so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="clients">
+  <div class="wrap sec">
+    <h2>Who we work with</h2>
+    <div>
+      <p class="lead">Owners, management teams, investors and companies new to the region.</p>
+      <div class="who three">
+        <div>
+          <h3>Owner-managed and family businesses</h3>
+          <ul>
+            <li>We are considering a new line of business and want a feasibility study before we commit.</li>
+            <li>Two of our partners want to sell their stakes and the rest of us want to stay. We need a fair value and the right buyer.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Corporates and investors</h3>
+          <ul>
+            <li>We are acquiring a company and need due diligence, a valuation and a purchase price allocation.</li>
+            <li>An investor has approached us. We need a well-supported valuation and clean numbers before the conversation goes further.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>International companies entering the region</h3>
+          <ul>
+            <li>We already sell into the Gulf through a distributor. Volumes have stalled and we need to decide whether to renegotiate, replace the distributor or set up ourselves.</li>
+            <li>A local group has proposed a joint venture. We need an independent view of the partner, the terms and the business plan before we answer.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">These are examples of the situations we are set up to handle, written as a client might put them. They are not quotations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="sectors">
+  <div class="wrap sec">
+    <h2>Sectors</h2>
+    <div>
+      <p class="lead">Nine sectors, and the kind of work we take on in each.</p>
+      <dl class="sectors">
+        <div><dt>Retail and trading</dt><dd>Valuing a franchise or distribution business, and deciding whether to sell through an agent or open your own stores.</dd></div>
+        <div><dt>Financial services and fintech</dt><dd>Valuing an early-stage company for a funding round, and building the financial model behind it.</dd></div>
+        <div><dt>Education</dt><dd>Feasibility and costing for a new school or training business, and preparing an institution for sale.</dd></div>
+        <div><dt>Logistics</dt><dd>Cash flow forecasting, cost review, and the case for owning or contracting facilities and fleet.</dd></div>
+        <div><dt>Energy</dt><dd>Feasibility studies and funding models for projects, contractors and equipment suppliers.</dd></div>
+        <div><dt>Manufacturing</dt><dd>The case for producing in the region or importing, and the valuation of a plant or product line.</dd></div>
+        <div><dt>Real estate and construction</dt><dd>Feasibility studies and financial models for developments, and valuation of property-related businesses.</dd></div>
+        <div><dt>Healthcare</dt><dd>Whether to open a facility alone, with a local operator, or by acquiring an existing provider.</dd></div>
+        <div><dt>Travel and tourism</dt><dd>Valuation of hospitality businesses, and feasibility studies for new ventures.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="band deep" id="principles">
+  <div class="wrap sec">
+    <h2>Working principles</h2>
+    <div class="principles">
+      <div><h3>One senior lead from start to finish</h3><p>The person who scopes your project with you also leads the work and presents the findings. You have one named senior contact from the first conversation to handover.</p></div>
+      <div><h3>Independent advice</h3><p>We recommend what the evidence supports. If it shows that you should wait, change course or stop, the report says so in plain terms.</p></div>
+      <div><h3>Assumptions you can test</h3><p>Every valuation, model and study sets out its method, its inputs and where they came from. Your team, your auditors and the other side can check the working.</p></div>
+      <div><h3>Confidentiality</h3><p>We sign a non-disclosure agreement before you share sensitive information, if you ask for one. We do not name our clients or describe their projects without written consent.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap sec">
+    <h2>About South Sigma</h2>
+    <div class="about">
+      <div class="prose">
+        <p>South Sigma is a management consultancy based in Dubai. We work with businesses that want to grow, whether by running better, raising capital, buying or selling a business, or entering a new market.</p>
+        <p>Our work falls into four practices: management consulting, valuation advisory, transaction advisory, and market entry and partnerships. Many projects draw on more than one. A family business bringing in an investor, for example, may need a valuation, investor materials and a cash flow forecast.</p>
+        <p>We work with owner-managed and family businesses, including owners planning a full or partial exit, and with corporates, investors and international companies entering the Gulf and wider Middle East.</p>
+        <p>Where a project needs legal, tax or audit work, or a step that requires a financial services licence, appropriately licensed advisers carry it out and we work alongside them.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Legal entity</dt><dd>South Sigma Consulting – FZCO</dd></div>
+        <div><dt>Office</dt><dd>24th Floor, The One Tower, Sheikh Zayed Road, Dubai, United Arab Emirates<br>P.O. Box 390114</dd></div>
+        <div><dt>Phone</dt><dd>+971 4 879 0761</dd></div>
+        <div><dt>Email</dt><dd>info@southsigma.com</dd></div>
+        <div><dt>LinkedIn</dt><dd><a class="li-icon" href="https://www.linkedin.com/company/south-sigma/" target="_blank" rel="noopener" aria-label="South Sigma on LinkedIn" title="South Sigma on LinkedIn"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7.1" cy="7.3" r="1.6" fill="currentColor"/><rect x="5.7" y="10" width="2.8" height="8.4" fill="currentColor"/><path fill="currentColor" d="M10.6 10h2.7v1.2c.5-.9 1.5-1.5 2.9-1.5 2.4 0 3.2 1.5 3.2 3.9v4.8h-2.8v-4.3c0-1.1-.3-1.9-1.4-1.9-1.2 0-1.8.8-1.8 2v4.2h-2.8z"/></svg></a></dd></div>
+        <div><dt>Practices</dt><dd>Management consulting, valuation advisory, transaction advisory, market entry and partnerships</dd></div>
+        <div><dt>Web</dt><dd>southsigma.com</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap sec">
+    <h2>Start a conversation</h2>
+    <div class="contact">
+      <div class="intro">
+        <p class="lead">Tell us what you are considering.</p>
+        <p>We will reply with whether and how we can help. A few lines are enough to begin.</p>
+        <div class="mail"><span id="addr">info@southsigma.com</span><button class="btn quiet" type="button" id="copy-addr">Copy address</button><span class="status" id="addr-status" role="status"></span></div>
+        <div class="mail tel"><span id="tel">+971 4 879 0761</span><button class="btn quiet" type="button" id="copy-tel">Copy number</button><span class="status" id="tel-status" role="status"></span></div>
+        <p class="li">You can also follow or message us on <a href="https://www.linkedin.com/company/south-sigma/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+        <div class="tell">
+          <h3>What to include in a first message</h3>
+          <ul>
+            <li>Your company: what it does and where it is based.</li>
+            <li>What you are considering: a project, a valuation, a transaction or a new market.</li>
+            <li>The practice you think you need, or that you are not sure yet.</li>
+            <li>Your timetable and any decision date you are working towards.</li>
+          </ul>
+        </div>
+      </div>
+      <form class="form" id="enquiry" novalidate>
+        <h3>Draft your message here</h3>
+        <p class="hint">Nothing is sent from this page. Fill in what you can, copy the draft, paste it into an email and send it to info@southsigma.com.</p>
+        <div class="field"><label for="f-name">Your name and role</label><input id="f-name" autocomplete="name"></div>
+        <div class="field"><label for="f-co">Your company, what it does and where it is based</label><textarea id="f-co"></textarea></div>
+        <div class="field"><label for="f-mkt">What you are considering</label><textarea id="f-mkt"></textarea></div>
+        <div class="field"><label for="f-route">What you need help with</label>
+          <select id="f-route"><option>Not sure yet</option><option>Management consulting</option><option>Valuation advisory</option><option>Transaction advisory</option><option>Market entry and partnerships</option></select></div>
+        <div class="field"><label for="f-time">Timetable or decision date</label><input id="f-time"></div>
+        <pre class="out" id="draft" aria-label="Draft message"></pre>
+        <div class="row"><button class="btn" type="submit">Copy draft to clipboard</button><span class="status" id="draft-status" role="status"></span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<dialog class="pdlg" id="privacy" aria-labelledby="privacy-h">
+  <div class="pdlg-in">
+    <div class="phd"><h2 id="privacy-h">Privacy policy</h2><button class="btn quiet" type="button" id="privacy-close">Close</button></div>
+    <div class="policy">
+      <p class="lead">How South Sigma handles personal information.</p>
+      <div class="pbody">
+        <p>This policy is issued by South Sigma Consulting – FZCO ("South Sigma", "we"). It explains what personal information we handle when you visit this website, contact us or interact with our LinkedIn page, why we handle it, and the choices you have. Last updated October 2026.</p>
+        <h3>Information you send us</h3>
+        <p>This website does not submit forms. The enquiry draft on the contact section stays in your browser until you copy it. When you email us, we receive your name, your email address, your company and role, and whatever else you choose to include. We use this information to reply to you, to assess whether we can help, and to follow up on your enquiry.</p>
+        <h3>Information collected when you visit</h3>
+        <p>Like most websites, the server that hosts this site may record technical details of each visit, such as the pages requested, the date and time, the browser and operating system, the referring page and the IP address. This information is used to keep the website secure and working, and to understand in aggregate how it is used. We do not use it to identify individual visitors.</p>
+        <h3>Our LinkedIn page</h3>
+        <p>We have a company page on LinkedIn. When you visit, follow or interact with it, LinkedIn collects and uses your personal information under its own privacy policy, and LinkedIn is primarily responsible for that processing, including any cookies and tracking technologies it uses.</p>
+        <p>We see what you choose to make visible to us there: your profile name and public profile details, your comments and reactions on our posts, and any messages you send to our page. We use this to reply to you and to communicate with people who follow us. If a conversation that starts on LinkedIn becomes an enquiry, we handle it in the same way as an email enquiry.</p>
+        <p>LinkedIn gives page owners aggregated statistics about visitors and followers, such as numbers of views and broad categories of industry or job function. We cannot identify individuals from these statistics.</p>
+        <p>To exercise your rights over information held by LinkedIn, the most direct route is LinkedIn's own privacy settings and contact channels. You can also contact us, and we will help where we can, including by removing content from our page.</p>
+        <h3>Client work</h3>
+        <p>If you become a client, we handle the personal information needed to carry out the engagement, under the terms agreed with you in writing. Those terms, and any non-disclosure agreement between us, apply alongside this policy.</p>
+        <h3>Who we share information with</h3>
+        <p>We do not sell personal information. We share it only with service providers who host our website and email and who act on our instructions, with licensed advisers working on your project where you have agreed to this, and with authorities where the law requires it.</p>
+        <h3>How long we keep it</h3>
+        <p>We keep personal information only for as long as it is needed for the purpose it was collected for, or for as long as the law requires us to keep records. If you ask us to delete an enquiry, we will delete it unless we are required to keep it.</p>
+        <h3>Security</h3>
+        <p>This website is served over an encrypted connection. We apply technical and organisational measures intended to protect personal information against loss, misuse and unauthorised access. No method of transmission or storage is completely secure, so please do not send highly sensitive information by email before we have agreed how to exchange it.</p>
+        <h3>Automated decisions</h3>
+        <p>We do not use automated decision-making or profiling on this website.</p>
+        <h3>Your rights</h3>
+        <p>Subject to the data protection law that applies to you, you may ask us for a copy of the personal information we hold about you, ask us to correct or delete it, ask us to restrict or stop using it, and withdraw any consent you have given. To make a request, email us at the address below. We may need to confirm your identity before we act on it.</p>
+        <h3>Links to other websites</h3>
+        <p>This website links to our LinkedIn page and may link to other websites. We are not responsible for how those websites handle personal information, and their own policies apply.</p>
+        <h3>Changes to this policy</h3>
+        <p>We may update this policy from time to time. The current version is always the one shown on this page, with the date it was last updated.</p>
+        <h3>Contact</h3>
+        <p>Questions and requests about privacy: info@southsigma.com, +971 4 879 0761, or South Sigma Consulting – FZCO, 24th Floor, The One Tower, Sheikh Zayed Road, Dubai, United Arab Emirates, P.O. Box 390114.</p>
+      </div>
+    </div>
+  </div>
+</dialog>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="data:image/png;base64,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" alt="South Sigma" width="836" height="88">
+      <address>South Sigma Consulting – FZCO<br>24th Floor, The One Tower<br>Sheikh Zayed Road<br>Dubai, United Arab Emirates<br>P.O. Box 390114<br>+971 4 879 0761<br>info@southsigma.com</address>
+      <p class="fp"><a class="li-icon" href="https://www.linkedin.com/company/south-sigma/" target="_blank" rel="noopener" aria-label="South Sigma on LinkedIn" title="South Sigma on LinkedIn"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7.1" cy="7.3" r="1.6" fill="currentColor"/><rect x="5.7" y="10" width="2.8" height="8.4" fill="currentColor"/><path fill="currentColor" d="M10.6 10h2.7v1.2c.5-.9 1.5-1.5 2.9-1.5 2.4 0 3.2 1.5 3.2 3.9v4.8h-2.8v-4.3c0-1.1-.3-1.9-1.4-1.9-1.2 0-1.8.8-1.8 2v4.2h-2.8z"/></svg></a></p>
+    </div>
+    <div class="legal">
+      <p>South Sigma is the trading name of South Sigma Consulting – FZCO. The information on this website is general and is not investment, legal or tax advice. Nothing on this website is an offer, a financial promotion or a recommendation to invest.</p>
+      <p>© 2026 South Sigma Consulting – FZCO. All rights reserved.</p>
+      <p><button class="linkbtn" type="button" id="privacy-open">Privacy policy</button></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(t,focus){
+    tabs.forEach(function(x){
+      var on=x===t;
+      x.setAttribute('aria-selected',on?'true':'false');
+      x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+    if(focus)t.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t,false)});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      else if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(e.key==='Home')n=tabs[0];
+      else if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();select(n,true)}
+    });
+  });
+  select(tabs[0],false);
+
+  // close compact menu after choosing a link
+  var menu=document.querySelector('.menu');
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.open=false});
+  document.addEventListener('click',function(e){if(menu.open&&!menu.contains(e.target))menu.open=false});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.open){menu.open=false;menu.querySelector('summary').focus()}});
+
+  function copy(text,statusEl,node,msg){
+    function done(){statusEl.textContent=msg||'Copied';setTimeout(function(){statusEl.textContent=''},2500)}
+    function fallback(){
+      var r=document.createRange();r.selectNodeContents(node);
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+      statusEl.textContent='Selected. Press Ctrl or Cmd + C to copy.';
+    }
+    try{navigator.clipboard.writeText(text).then(done,fallback)}catch(err){fallback()}
+  }
+  var addr=document.getElementById('addr');
+  document.getElementById('copy-addr').addEventListener('click',function(){
+    copy(addr.textContent,document.getElementById('addr-status'),addr);
+  });
+
+  var tel=document.getElementById('tel');
+  document.getElementById('copy-tel').addEventListener('click',function(){copy(tel.textContent,document.getElementById('tel-status'),tel)});
+  var dlg=document.getElementById('privacy');
+  function openPolicy(){if(dlg.showModal){if(!dlg.open)dlg.showModal()}else{dlg.setAttribute('open','')}dlg.scrollTop=0}
+  document.getElementById('privacy-open').addEventListener('click',openPolicy);
+  document.getElementById('privacy-close').addEventListener('click',function(){dlg.close?dlg.close():dlg.removeAttribute('open')});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  if(location.hash==='#privacy')openPolicy();
+  var form=document.getElementById('enquiry'),draft=document.getElementById('draft');
+  function v(id){return document.getElementById(id).value.trim()}
+  function build(){
+    var blank='(to add)';
+    draft.textContent='To: info@southsigma.com\nSubject: Enquiry'+(v('f-route')==='Not sure yet'?'':', '+v('f-route').toLowerCase())+'\n\n'+
+      'Company: '+(v('f-co')||blank)+'\n'+
+      'What we are considering: '+(v('f-mkt')||blank)+'\n'+
+      'Help needed: '+v('f-route')+'\n'+
+      'Timetable: '+(v('f-time')||blank)+'\n\n'+
+      (v('f-name')||'(your name and role)');
+  }
+  form.addEventListener('input',build);
+  form.addEventListener('submit',function(e){
+    e.preventDefault();build();
+    copy(draft.textContent,document.getElementById('draft-status'),draft,'Draft copied. Paste it into an email.');
+  });
+  build();
+})();
+</script>
+
+</body>
+</html>
